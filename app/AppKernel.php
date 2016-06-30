@@ -50,6 +50,8 @@ class AppKernel extends Kernel
             new Kunstmaan\DashboardBundle\KunstmaanDashboardBundle(),
             new Kunstmaan\MenuBundle\KunstmaanMenuBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+            # BBG Bundles
+            new Bbg\KunstmaanAdminBundle\BbgKunstmaanAdminBundle(),
             //new Kunstmaan\LeadGenerationBundle\KunstmaanLeadGenerationBundle(),
         );
 
