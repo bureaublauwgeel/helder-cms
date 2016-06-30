@@ -14,11 +14,13 @@
         "friendsofsymfony/user-bundle": "2.0.*@dev",
         "kriswallsmith/spork": "~0.3.0",
         "bureaublauwgeel/kunstmaanadminbundle": "~3.6.0",
-        "bureaublauwgeel/bbgroutableentitybundle" : "2.0.4"
+        "bureaublauwgeel/bbgroutableentitybundle" : "2.0.4",
+        "bureaublauwgeel/generatorbundle" : "dev-develop"
     },
     "repositories" : [
-        {"type" : "vcs", "url" : "git@git.bbgtest.nl:bureaublauwgeel/kunstmaan-admin-bundle.git"},
-        {"type" : "vcs", "url" : "git@git.bbgtest.nl:bureaublauwgeel/bbg-routable-entity-bundle.git"}
+        {"type" : "vcs", "url" : "git@git.bbgtest.nl:bureaublauwgeel/bbg-kunstmaan-admin-bundle.git"},
+        {"type" : "vcs", "url" : "git@git.bbgtest.nl:bureaublauwgeel/bbg-routable-entity-bundle.git"},
+        {"type" : "vcs", "url" : "git@git.bbgtest.nl:bureaublauwgeel/bbg-generator-bundle.git"}
     ],
     "require-dev": {
         "behat/behat": "~2.5.0",
