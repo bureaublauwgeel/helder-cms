@@ -1,0 +1,209 @@
+imports:
+    - { resource: config_base.yml }
+    - { resource: domains.yml }
+
+framework:
+    ide:                "phpstorm://open?file=%%f&line=%%l"
+    translator:         { fallback: %locale% }
+    session:
+        name:               %session_prefix%
+        # set true if no scripting languages need to access the cookie
+        cookie_httponly:    false
+    assets:
+        version:     ~
+
+twig:
+    globals:
+        websitetitle: %websitetitle%
+        defaultlocale: %defaultlocale%
+        requiredlocales: %requiredlocales%
+        gtm_code: %analytics.googletagmanager%
+        titlecolor: "#ffffff"
+        titlebgcolor: "#8e962b"
+
+assetic:
+    debug: "%kernel.debug%"
+    use_controller: "%use_assetic_controller%"
+    node: '%nodejs_path%'
+    ruby: bundle exec
+    sass: sass
+    filters:
+        cssrewrite: ~
+        scss: ~
+        uglifyjs2:
+            bin: '%kernel.root_dir%/../node_modules/.bin/uglifyjs'
+            compress: true
+        uglifycss:
+            bin: '%kernel.root_dir%/../node_modules/.bin/uglifycss'
+
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                auto_mapping: true
+                mappings:
+                    gedmo_translatable:
+                        type: annotation
+                        prefix: Gedmo\Translatable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+                        alias: GedmoTranslatable # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
+                    gedmo_translator:
+                        type: annotation
+                        prefix: Gedmo\Translator\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translator/Entity"
+                        alias: GedmoTranslator # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
+                    gedmo_loggable:
+                        type: annotation
+                        prefix: Gedmo\Loggable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                        alias: GedmoLoggable # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
+                    gedmo_tree:
+                        type: annotation
+                        prefix: Gedmo\Tree\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
+                        alias: GedmoTree # this one is optional and will default to the name set for the mapping
+                        is_bundle: false
+
+parameters:
+    assetic.cache.class: Assetic\Cache\ArrayCache
+
+stof_doctrine_extensions:
+    default_locale: %defaultlocale%
+    translation_fallback: true
+    orm:
+        default:
+            timestampable: true
+            loggable: true
+            translatable: true
+            sluggable: true
+
+liip_imagine:
+    resolvers:
+        default:
+            web_path:
+                cache_prefix: uploads/cache
+    driver: imagick
+    data_loader: default
+    filter_sets:
+        optim:
+            quality: 85
+            format: jpg
+            filters:
+                strip: ~
+        optimjpg:
+            quality: 85
+            format: jpg
+            filters:
+                strip: ~
+        optimpng:
+            quality: 85
+            format: png
+            filters:
+                strip: ~
+
+        # ImagePagePart srcset JPG filters
+        image_huge_jpg:
+            quality: 95
+            format: jpg
+            filters:
+                strip: ~
+                thumbnail: { size: [2400,null], mode: outbound, allow_upscale: false }
+        image_big_jpg:
+            quality: 95
+            format: jpg
+            filters:
+                strip: ~
+                thumbnail: { size: [1200,null], mode: outbound, allow_upscale: false }
+        image_medium_jpg:
+            quality: 95
+            format: jpg
+            filters:
+                strip: ~
+                thumbnail: { size: [600,null], mode: outbound, allow_upscale: false }
+        image_small_jpg:
+            quality: 95
+            format: jpg
+            filters:
+                strip: ~
+                thumbnail: { size: [400,null], mode: outbound, allow_upscale: false }
+
+        # ImagePagePart srcset PNG filters
+        image_huge_png:
+            quality: 95
+            format: png
+            filters:
+                strip: ~
+                thumbnail: { size: [2400,null], mode: outbound, allow_upscale: false }
+        image_big_png:
+            quality: 95
+            format: png
+            filters:
+                strip: ~
+                thumbnail: { size: [1200,null], mode: outbound, allow_upscale: false }
+        image_medium_png:
+            quality: 95
+            format: png
+            filters:
+                strip: ~
+                thumbnail: { size: [600,null], mode: outbound, allow_upscale: false }
+        image_small_png:
+            quality: 95
+            format: png
+            filters:
+                strip: ~
+                thumbnail: { size: [400,null], mode: outbound, allow_upscale: false }
+
+services:
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }
+
+    kunstmaan_logging_introspection:
+        class: Monolog\Processor\IntrospectionProcessor
+        tags:
+            - { name: monolog.processor }
+
+    kunstmaan_logging_web:
+        class: Symfony\Bridge\Monolog\Processor\WebProcessor
+        tags:
+            - { name: monolog.processor }
+
+    kunstmaan_logging_formatter:
+        class: Monolog\Formatter\LineFormatter
+
+    gedmo.listener.tree:
+        class: Gedmo\Tree\TreeListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ "@annotation_reader" ] ]
+
+    fos_user.doctrine_registry:
+        alias: doctrine
+
+white_october_pagerfanta:
+    default_view: twitter_bootstrap
+
+kunstmaan_translator:
+    enabled: true
+    managed_locales: ['nl', 'en', 'de', 'fr']
+kunstmaan_menu:
+    menu_adminlist: MenuBundle\AdminList\MenuAdminListConfigurator
+    menus: [header, footer]
+bbg_kunstmaan_admin:
+    show_kunstmaan_branding: false
+    ckeditor_styles:
+        lead:
+            name: Lead text
+            element: div
+            class: lead
+            css: "font-size:16px; font-weight:bold;"
