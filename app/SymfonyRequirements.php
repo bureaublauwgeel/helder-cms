@@ -32,10 +32,29 @@
  */
 class Requirement
 {
+    /**
+     * @var bool
+     */
     private $fulfilled;
+
+    /**
+     * @var string
+     */
     private $testMessage;
+
+    /**
+     * @var string
+     */
     private $helpText;
+
+    /**
+     * @var string
+     */
     private $helpHtml;
+
+    /**
+     * @var bool
+     */
     private $optional;
 
     /**
@@ -168,6 +187,9 @@ class PhpIniRequirement extends Requirement
  */
 class RequirementCollection implements IteratorAggregate
 {
+    /**
+     * @var array
+     */
     private $requirements = array();
 
     /**
@@ -376,6 +398,9 @@ class RequirementCollection implements IteratorAggregate
  */
 class SymfonyRequirements extends RequirementCollection
 {
+    /**
+     *
+     */
     const REQUIRED_PHP_VERSION = '5.3.3';
 
     /**
