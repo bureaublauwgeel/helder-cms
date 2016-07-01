@@ -15,6 +15,13 @@ KunstmaanMediaBundle:
     requirements:
         _locale: %requiredlocales%
 
+# KunstmaanMenuBundle
+KunstmaanMenuBundle:
+    resource: "@KunstmaanMenuBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: %requiredlocales%
+
 # KunstmaanAdminBundle
 KunstmaanAdminBundle:
     resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
