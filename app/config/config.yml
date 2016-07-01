@@ -22,7 +22,7 @@ twig:
 
 assetic:
     debug: "%kernel.debug%"
-    use_controller: "%use_assetic_controller%"
+    use_controller: false
     node: '%nodejs_path%'
     ruby: bundle exec
     sass: sass
