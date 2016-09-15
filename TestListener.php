@@ -15,8 +15,8 @@ class TestListener implements PHPUnit_Framework_TestListener
 {
     /**
      * @param PHPUnit_Framework_Test $test
-     * @param Exception              $e
-     * @param float                  $time
+     * @param Exception $e
+     * @param float $time
      */
     public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
     {
@@ -24,9 +24,9 @@ class TestListener implements PHPUnit_Framework_TestListener
     }
 
     /**
-     * @param PHPUnit_Framework_Test                 $test
+     * @param PHPUnit_Framework_Test $test
      * @param PHPUnit_Framework_AssertionFailedError $e
-     * @param float                                  $time
+     * @param float $time
      */
     public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
     {
@@ -35,8 +35,8 @@ class TestListener implements PHPUnit_Framework_TestListener
 
     /**
      * @param PHPUnit_Framework_Test $test
-     * @param Exception              $e
-     * @param float                  $time
+     * @param Exception $e
+     * @param float $time
      */
     public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
     {
@@ -45,8 +45,8 @@ class TestListener implements PHPUnit_Framework_TestListener
 
     /**
      * @param PHPUnit_Framework_Test $test
-     * @param Exception              $e
-     * @param float                  $time
+     * @param Exception $e
+     * @param float $time
      */
     public function addRiskyTest(PHPUnit_Framework_Test $test, Exception $e, $time)
     {
@@ -55,8 +55,8 @@ class TestListener implements PHPUnit_Framework_TestListener
 
     /**
      * @param PHPUnit_Framework_Test $test
-     * @param Exception              $e
-     * @param float                  $time
+     * @param Exception $e
+     * @param float $time
      */
     public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
     {
@@ -73,7 +73,7 @@ class TestListener implements PHPUnit_Framework_TestListener
 
     /**
      * @param PHPUnit_Framework_Test $test
-     * @param float                  $time
+     * @param float $time
      */
     public function endTest(PHPUnit_Framework_Test $test, $time)
     {
@@ -82,6 +82,7 @@ class TestListener implements PHPUnit_Framework_TestListener
 
     /**
      * @param PHPUnit_Framework_TestSuite $suite
+     *
      * @throws \Doctrine\ORM\Tools\ToolsException
      */
     public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
@@ -91,7 +92,7 @@ class TestListener implements PHPUnit_Framework_TestListener
 
         $application = new Application($kernel);
 
-// add the database:drop command to the application and run it
+        // add the database:drop command to the application and run it
         $command = new DropDatabaseDoctrineCommand();
         $command->setContainer($kernel->getContainer());
         $application->add($command);
@@ -102,7 +103,6 @@ class TestListener implements PHPUnit_Framework_TestListener
             ]
         );
         $command->run($input, new ConsoleOutput());
-
 
         // This stops a bug where Drop Database does not close the handle properly & causes subsequent
         // "database not found" errors.
@@ -126,8 +126,8 @@ class TestListener implements PHPUnit_Framework_TestListener
         $application->add($command);
         $input = new ArrayInput(
             [
-                'command'          => 'doctrine:migrations:migrate',
-                '--quiet'          => false,
+                'command' => 'doctrine:migrations:migrate',
+                '--quiet' => false,
                 '--no-interaction' => true,
             ]
         );
