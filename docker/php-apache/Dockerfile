@@ -38,7 +38,7 @@ RUN apt-get install -y nodejs
 RUN npm install npm -g
 
 # Add bundler
-RUN apt-get install -y ruby
+RUN apt-get install -y ruby ruby-dev make
 RUN gem install bundler
 
 EXPOSE 80
