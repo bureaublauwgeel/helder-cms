@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+composer install
 php app/console kuma:generate:bundle
 php app/console bbg:generate:default-site
 php app/console doctrine:database:create
