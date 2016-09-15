@@ -17,3 +17,9 @@ services:
             - ./docker/logs/apache2/:/var/log/apache2
         links:
             - db
+    elasticsearch:
+        image: elasticsearch:2.3
+        command: elasticsearch -Des.network.host=0.0.0.0
+        ports:
+            - "9200:9200"
+            - "9300:9300"
