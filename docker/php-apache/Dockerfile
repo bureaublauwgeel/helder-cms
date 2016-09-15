@@ -38,6 +38,9 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install npm -g
 
+# Add bundler
+RUN gem install bundler
+
 EXPOSE 80
 
 ENTRYPOINT [ "/usr/sbin/apache2" ]
