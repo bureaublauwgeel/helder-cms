@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 CLIENT_NAME=$1
+LOWER_CLIENT_NAME=`echo $1 | tr A-Z a-z`
 
 composer install
 php app/console kuma:generate:bundle --namespace=$CLIENT_NAME/WebsiteBundle --dir=/var/www/src --no-interaction
-php app/console bbg:generate:default-site
+php app/console bbg:generate:default-site --namespace=$CLIENT_NAME/WebsiteBundle --prefix=${LOWER_CLIENT_NAME}_website_
 php app/console doctrine:database:drop --force
 php app/console doctrine:database:create
 php app/console doctrine:migrations:diff
