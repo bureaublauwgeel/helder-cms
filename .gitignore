@@ -27,3 +27,5 @@ composer.phar
 /web/uploads
 
 node_modules
+
+docker/logs
