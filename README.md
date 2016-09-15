@@ -6,3 +6,4 @@ a fully-functional CMS (content management system) based on Symfony2 that you ca
 
 Build on https://github.com/Kunstmaan/KunstmaanBundlesStandardEdition
 
+php composer.phar create-project bureaublauwgeel/helder-cms website
