@@ -32,3 +32,5 @@ docker/logs
 .ssh/known_hosts
 .composer
 .bash_history
+.npm
+.bundle/cache
