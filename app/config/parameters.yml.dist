@@ -42,4 +42,4 @@ parameters:
     database_socket: ~
     validation_cache: ~
     doctrine_cache: array
-    nodejs_path: /usr/bin/nodejs
+    nodejs_path: /usr/bin/node
