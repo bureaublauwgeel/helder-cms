@@ -34,3 +34,6 @@ docker/logs
 .bash_history
 .npm
 .bundle/cache
+.cache
+.sass-cache
+.config
