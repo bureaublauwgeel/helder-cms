@@ -29,3 +29,6 @@ composer.phar
 node_modules
 
 docker/logs
+.ssh/known_hosts
+.composer
+.bash_history

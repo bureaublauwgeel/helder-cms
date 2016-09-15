@@ -45,7 +45,7 @@ This will launch a mysql instance and a PHP/Apache instance
 Enter the docker PHP/Apache setup...
  
 ```
-docker exec -t -i website_php-apache_1 /bin/bash
+docker exec -t -i -u www-data website_php-apache_1 /bin/bash
 ```
   
 ... and run the shell script to setup the project

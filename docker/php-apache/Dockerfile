@@ -16,15 +16,14 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 RUN php5enmod gd mysql curl mcrypt xmlrpc imagick apcu intl
 RUN a2enmod expires ssl rewrite headers mime_magic vhost_alias
 
-RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
+RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR /var/www
+RUN chown $APACHE_RUN_USER:$APACHE_RUN_GROUP /var/www
 
 ADD website.conf /etc/apache2/sites-available/
 
 RUN ln -s /etc/apache2/sites-available/website.conf /etc/apache2/sites-enabled/website.conf
 RUN rm /etc/apache2/sites-enabled/000-default.conf
 
-COPY id_docker /root/.ssh/id_rsa
-RUN chmod 600 /root/.ssh/id_rsa
 RUN  echo "    IdentityFile ~/.ssh/id_rsa" >> /etc/ssh/ssh_config
 
 # Install composer
@@ -39,6 +38,7 @@ RUN apt-get install -y nodejs
 RUN npm install npm -g
 
 # Add bundler
+RUN apt-get install -y ruby
 RUN gem install bundler
 
 EXPOSE 80
