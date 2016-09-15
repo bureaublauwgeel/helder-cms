@@ -11,9 +11,10 @@ php app/console doctrine:fixtures:load --no-interaction
 
 bundle install
 npm install --save bower gulp uglify-js uglifycss
+npm install
 npm shrinkwrap
-node_modules/.bin/bower install
-node_modules/.bin/bower build
+node_modules/.bin/bower install --config.interactive=false
+node_modules/.bin/gulp build
 
 php app/console assets:install --symlink
 php app/console assetic:dump
