@@ -196,7 +196,7 @@ kunstmaan_translator:
     enabled: true
     managed_locales: ['nl', 'en', 'de', 'fr']
 kunstmaan_menu:
-    menu_adminlist: MenuBundle\AdminList\MenuAdminListConfigurator
+    menu_adminlist: Kunstmaan\MenuBundle\AdminList\MenuAdminListConfigurator
     menus: [header, footer]
 bbg_kunstmaan_admin:
     show_kunstmaan_branding: false

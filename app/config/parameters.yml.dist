@@ -1,10 +1,10 @@
 parameters:
     database_driver:            pdo_mysql
-    database_host:              127.0.0.1
+    database_host:              db
     database_port:              ~
-    database_name:              helder_cms
-    database_user:              travis
-    database_password:          ~
+    database_name:              symfony
+    database_user:              root
+    database_password:          root
 
     mailer_transport:           smtp
     mailer_host:                127.0.0.1
@@ -42,4 +42,4 @@ parameters:
     database_socket: ~
     validation_cache: ~
     doctrine_cache: array
-    nodejs_path: /usr/bin/nodejs
+    nodejs_path: /usr/bin/node

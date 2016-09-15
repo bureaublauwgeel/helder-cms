@@ -7,13 +7,14 @@
         "psr-4": { "": "src/" },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
+    "minimum-stability" : "dev",
     "require": {
         "kunstmaan/bundles-cms": "~3.6.0",
         "friendsofsymfony/http-cache-bundle": "~1.3.6",
         "doctrine/doctrine-migrations-bundle": "~1.1.1",
         "friendsofsymfony/user-bundle": "2.0.*@dev",
         "kriswallsmith/spork": "~0.3.0",
-        "bureaublauwgeel/kunstmaanadminbundle": "3.6.0",
+        "bureaublauwgeel/kunstmaanadminbundle": "3.6.0.1",
         "bureaublauwgeel/routable-entity-bundle" : "2.0.4",
         "bureaublauwgeel/generatorbundle" : "dev-develop"
     },
@@ -74,7 +75,7 @@
             "dev-master": "1.0-dev"
         }
     },
-     "version": "1.0.3",
+     "version": "1.0.4",
     "minimum-stability": "stable",
     "prefer-stable": true
 }

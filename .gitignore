@@ -27,3 +27,13 @@ composer.phar
 /web/uploads
 
 node_modules
+
+docker/logs
+.ssh/known_hosts
+.composer
+.bash_history
+.npm
+.bundle/cache
+.cache
+.sass-cache
+.config
