@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+
+if [[ $# -eq 0 ]] ; then
+    echo 'No arguments provided. Please enter the ClientName'
+    exit 1
+fi
+
 CLIENT_NAME=$1
 LOWER_CLIENT_NAME=`echo $1 | tr A-Z a-z`
 
