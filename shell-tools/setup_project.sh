@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+CLIENT_NAME=$1
+
 composer install
-php app/console kuma:generate:bundle
+php app/console kuma:generate:bundle --namespace=$CLIENT_NAME/WebsiteBundle --dir=/var/www/src --no-interaction
 php app/console bbg:generate:default-site
 php app/console doctrine:database:drop --force
 php app/console doctrine:database:create
