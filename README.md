@@ -52,7 +52,7 @@ docker exec -t -i -u www-data website_php-apache_1 /bin/bash
 
 ```
 cd /var/www
-bash shell-tools/setup_project.sh
+bash shell-tools/setup_project.sh <KlantNaam> // is CamelCase
 ```
 
 By default the site will be available on ```http://192.168.99.100/app_dev.php```
