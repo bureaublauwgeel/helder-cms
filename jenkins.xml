@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="thenewmotion_webshop" default="build_test">
+<project name="helder_CMS" default="build_test">
 
     <property environment="env"/>
     <!-- By default, we assume all tools to be on the $PATH -->
@@ -54,7 +54,8 @@
             </fileset>
         </copy>
         <!--  ...and rename it  -->
-        <move file="${build.dir}/app/config/parameters.yml.bbgtest" tofile="${build.dir}/app/config/parameters.yml.dist"/>
+        <move file="${build.dir}/app/config/parameters.yml.bbgtest"
+              tofile="${build.dir}/app/config/parameters.yml.dist"/>
     </target>
 
     <target name="copy_parameters_yml_accept">
@@ -65,7 +66,8 @@
             </fileset>
         </copy>
         <!--  ...and rename it  -->
-        <move file="${build.dir}/app/config/parameters.yml.bbgaccept" tofile="${build.dir}/app/config/parameters.yml.dist"/>
+        <move file="${build.dir}/app/config/parameters.yml.bbgaccept"
+              tofile="${build.dir}/app/config/parameters.yml.dist"/>
     </target>
 
     <target name="copy_parameters_yml_prod">
@@ -324,7 +326,6 @@
     </target>
 
 
-
     <target name="phpcpd-ci"
             unless="phpcpd.done"
             depends="prepare,composer"
@@ -370,7 +371,7 @@
     </target>
 
     <target name="-check-failure">
-        <echo message="result of phpunit ${result.phpunit}" />
+        <echo message="result of phpunit ${result.phpunit}"/>
         <fail message="PHPUnit did not finish successfully">
             <condition>
                 <not>
@@ -379,6 +380,5 @@
             </condition>
         </fail>
     </target>
-
 
 </project>

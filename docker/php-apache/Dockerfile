@@ -25,6 +25,7 @@ RUN ln -s /etc/apache2/sites-available/website.conf /etc/apache2/sites-enabled/w
 RUN rm /etc/apache2/sites-enabled/000-default.conf
 
 RUN  echo "    IdentityFile ~/.ssh/id_rsa" >> /etc/ssh/ssh_config
+RUN  echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 # Install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
