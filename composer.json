@@ -35,7 +35,8 @@
         "phpunit/phpunit": "~4.4",
         "fzaninotto/faker": "~1.5",
         "nelmio/alice": "~1.6",
-        "fabpot/goutte": "~1.0"
+        "fabpot/goutte": "~1.0",
+        "phpunit/phpunit": "5.5.*"
     },
     "scripts": {
         "post-root-package-install": [
