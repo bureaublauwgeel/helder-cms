@@ -1,10 +1,10 @@
 <?php
 
-use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Kernel;
 
 /**
- *
+ * AppKernel
  */
 class AppKernel extends Kernel
 {
@@ -13,7 +13,7 @@ class AppKernel extends Kernel
      */
     public function registerBundles()
     {
-        $bundles = array(
+        $bundles = [
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -53,13 +53,13 @@ class AppKernel extends Kernel
             # BBG Bundles
             new Bbg\KunstmaanAdminBundle\BbgKunstmaanAdminBundle(),
             //new Kunstmaan\LeadGenerationBundle\KunstmaanLeadGenerationBundle(),
-        );
+        ];
 
-        if (in_array($this->getEnvironment(), array('dev'), true)) {
+        if (in_array($this->getEnvironment(), ['dev'], true)) {
             $bundles[] = new Kunstmaan\LiveReloadBundle\KunstmaanLiveReloadBundle();
         }
 
-        if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
+        if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Kunstmaan\BehatBundle\KunstmaanBehatBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
@@ -67,7 +67,6 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
             $bundles[] = new Bbg\GeneratorBundle\BbgGeneratorBundle();
-
         }
 
         return $bundles;
@@ -78,6 +77,6 @@ class AppKernel extends Kernel
      */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+        $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
     }
 }
