@@ -157,3 +157,48 @@ To make a new build, run ```node_modules/.bin/gulp build```.
 
 You can run this command both from your client system as from within the docker instance. The preferred solution is to run it on the client system because it uses your Mac notification system.
 
+### PHP support in phpStorm
+
+You need PHP support in phpStorm. To enable this, take the following steps
+
+* Open the Preferences dialog box, and click PHP node in Languages and Frameworks.
+* Select the PHP interpreter
+
+
+### PHPUnit from phpStorm
+
+With phpStorm PHPUnit is loaded with autoload.php from the Composer dependency manager. PHPunit is inclused in the composer.json
+
+```
+    "require-dev": {
+        ...
+        "phpunit/phpunit": "5.5.*"
+    },
+```
+
+To enable it in your project, take the following steps
+
+* Open the Preferences dialog box, and click PHPUnit under the PHP node in Languages and Frameworks.
+* On the PHPUnit page that opens, choose ```Use composer autoloader``` and specify the location of the autoload.php, located in ```app/autoload.php``` within your project.
+
+To run the unit test, right click on ```app/phpunit.xml.dist``` and select ```Run```
+
+
+### PHPUnit from docker
+
+You can also run the PHPUnit from within docker. To execute the tests run
+
+```
+cd /var/www
+./vendor/phpunit/phpunit/phpunit -c app/phpunit.xml.dist 
+```
+
+or 
+
+```
+./var/www/vendor/phpunit/phpunit/phpunit -c /var/www/app/phpunit.xml.dist 
+```
+
+
+
+
