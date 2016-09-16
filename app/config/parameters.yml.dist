@@ -1,6 +1,6 @@
 parameters:
     database_driver:            pdo_mysql
-    database_host:              db
+    database_host:              192.168.99.100
     database_port:              ~
     database_name:              symfony
     database_user:              root
