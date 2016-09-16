@@ -53,6 +53,7 @@ class AppKernel extends Kernel
             # BBG Bundles
             new Bbg\KunstmaanAdminBundle\BbgKunstmaanAdminBundle(),
             //new Kunstmaan\LeadGenerationBundle\KunstmaanLeadGenerationBundle(),
+            new Bbg\WebsiteSettingsBundle\BbgWebsiteSettingsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev'], true)) {
