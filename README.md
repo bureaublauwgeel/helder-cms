@@ -43,6 +43,14 @@ docker-compose --project-name <KlantNaam> up -d
 
 This will launch a mysql instance and a PHP/Apache instance
 
+
+To stop the docker environment run
+
+```
+docker-compose --project-name <KlantNaam> down
+```
+
+
 ### Setup the site from within docker
 
 Enter the docker PHP/Apache setup...
