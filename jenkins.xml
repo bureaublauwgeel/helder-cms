@@ -37,6 +37,7 @@
                 <exclude name="*.md"/>
                 <exclude name="app/config/parameters.yml*"/>
                 <exclude name="web/robots*.txt"/>
+                <exclude name="web/app_dev.php"/>
                 <exclude name="**/web/uploads/"/>
                 <exclude name="private/**"/>
                 <exclude name="**/.gitignore"/>
