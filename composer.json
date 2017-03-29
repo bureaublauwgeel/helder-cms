@@ -18,8 +18,8 @@
         "doctrine/doctrine-migrations-bundle": "~1.1.1",
         "friendsofsymfony/user-bundle": "2.0.*@dev",
         "kriswallsmith/spork": "~0.3.0",
-        "bureaublauwgeel/kunstmaanadminbundle": "3.6.0.1",
-        "bureaublauwgeel/routable-entity-bundle": "2.0.4",
+        "bureaublauwgeel/kunstmaanadminbundle": "3.6.0.7",
+        "bureaublauwgeel/routable-entity-bundle": "2.1.0",
         "bureaublauwgeel/generatorbundle": "dev-develop",
         "bureaublauwgeel/websitesettingsbundle": "dev-develop"
     },
