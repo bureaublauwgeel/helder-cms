@@ -19,7 +19,7 @@
         "friendsofsymfony/user-bundle": "2.0.*@dev",
         "kriswallsmith/spork": "~0.3.0",
         "bureaublauwgeel/kunstmaanadminbundle": "3.6.0.7",
-        "bureaublauwgeel/routable-entity-bundle": "2.1.0",
+        "bureaublauwgeel/routable-entity-bundle": "dev-develop",
         "bureaublauwgeel/generatorbundle": "dev-develop",
         "bureaublauwgeel/websitesettingsbundle": "dev-develop"
     },
