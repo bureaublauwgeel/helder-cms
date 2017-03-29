@@ -6,6 +6,8 @@ a fully-functional CMS (content management system) based on Symfony2 that you ca
 
 Build on https://github.com/Kunstmaan/KunstmaanBundlesStandardEdition
 
+If you use docker, make sure your virtual machine has 4GB of memory. This because of composer install.
+
 ## Setup
 
 To setup a new project you need to do the following
