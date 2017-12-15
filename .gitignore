@@ -5,6 +5,7 @@
 .buildpath
 .project
 .settings
+.v8flags.*
 *.sublime-project
 composer.phar
 
@@ -12,6 +13,8 @@ composer.phar
 /app/config/parameters.yml
 /app/cache/*
 /app/logs/*
+
+/build/
 
 !/app/cache/.gitkeep
 !/app/logs/.gitkeep
@@ -24,7 +27,10 @@ composer.phar
 /web/css/
 /web/bundles/
 /web/Kunstmaan*BundleAssets/
+/web/generated-js/
 /web/uploads
+
+/app/Resources/*WebsiteBundle/views/Layout/_js_footer.html.twig
 
 node_modules
 

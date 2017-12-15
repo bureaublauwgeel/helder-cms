@@ -1,6 +1,6 @@
 parameters:
     database_driver:            pdo_mysql
-    database_host:              192.168.99.100
+    database_host:              localhost
     database_port:              ~
     database_name:              symfony
     database_user:              root
@@ -30,16 +30,17 @@ parameters:
     searchport:                 9200
     searchindexname:            myproject
     searchindexprefix:          myproject
+    kunstmaan_search.hostname:  localhost
 
-    analytics.googletagmanager: GTM-XXXXXX
+    analytics.googletagmanager: ~
 
     google.api.client_id:       More info at http://bundles.kunstmaan.be/documentation/cookbook/google-analytics-dashboard
     google.api.client_secret:   ~
     google.api.dev_key:         ~
 
-    doctrine.server_version:    5.5
+    doctrine.server_version:    5.7
 
     database_socket: ~
     validation_cache: ~
     doctrine_cache: array
-    nodejs_path: /usr/bin/nodejs
+    nodejs_path: /usr/local/bin/node

@@ -36,8 +36,8 @@ ln -s $DEST_PATH $BUILDS_PATH/current
 
 mv $BUILD_PATH $DEST_PATH
 
-# Symfony2: install node modules with npm
-npm install --prefix ${WORK_PATH}
+# Symfony2: install node modules with yarn
+yarn install --cwd ${WORK_PATH} --non-interactive --frozen-lockfile
 
 # Symfony2: install ruby gems with bundler
 bundle install --gemfile=${WORK_PATH}/Gemfile
@@ -48,11 +48,6 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=${WORK_PATH}
 # Symfony2: install vendor bundles and assets, optimize autoloader classmap
 SYMFONY_ENV=prod php ${WORK_PATH}/composer.phar install --no-interaction --no-ansi --no-dev --optimize-autoloader --working-dir $WORK_PATH
 
-# Bower install
-${WORK_PATH}/node_modules/.bin/bower install --config.cwd=${WORK_PATH} --config.directory=app/Resources/vendor_bower/ --config.interactive=false
-
-
-
 # fix file permissions
 setfacl -Rn -m u:www-data:rwX -m u:deployment:rwX ${WORK_PATH}/app/cache ${WORK_PATH}/app/logs
 setfacl -dRn -m u:www-data:rwX -m u:deployment:rwX ${WORK_PATH}/app/cache ${WORK_PATH}/app/logs
@@ -62,6 +57,7 @@ php ${WORK_PATH}/app/console doctrine:migrations:migrate --no-interaction --env=
 
 # Build with Gulp
 ${WORK_PATH}/node_modules/.bin/gulp build --cwd ${WORK_PATH} -LLLL
+rm -f ${HTTP_PATH}/frontend/css/*.map
 
 # Symfony2: clean and warm-up cache
 php ${WORK_PATH}/app/console cache:clear --no-interaction --env=prod --no-debug
@@ -88,6 +84,9 @@ php ${WORK_PATH}/app/console kuma:translator:import --no-interaction --env=prod 
 # Translations cache flush
 php ${WORK_PATH}/app/console kuma:translator:cache --flush --no-interaction --env=prod --no-debug
 
+# Update ElasticSearch index
+php ${WORK_PATH}/app/console kuma:search:pop full --env=prod --no-debug
+
 # Symfony2: clean and warm-up cache again
 php ${WORK_PATH}/app/console cache:clear --no-interaction --env=prod --no-debug
 
@@ -98,7 +97,6 @@ rm ${DEST_PATH}/"`basename "${BASH_SOURCE[0]}"`"
 ln -sfn $HTTP_PATH ${ROOT_PATH}/http
 
 # clear PHP opcache and APC
-
 curl -s -w "\n" http://localhost/clear_cache.php
 
 # remove old versions, keep the last 3 builds

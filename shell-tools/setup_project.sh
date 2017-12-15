@@ -19,7 +19,7 @@ php app/console doctrine:migrations:migrate --no-interaction
 php app/console doctrine:fixtures:load --no-interaction
 
 bundle install
-#npm install --save bower gulp uglify-js uglifycss
+npm install --save bower gulp uglify-js uglifycss
 npm install
 npm shrinkwrap
 node_modules/.bin/bower install --config.interactive=false

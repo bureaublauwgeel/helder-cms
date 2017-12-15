@@ -28,16 +28,6 @@
         <ini name="memory_limit" value="-1"/>
     </php>
 
-    <listeners>
-        <listener class="TestListener" file="../TestListener.php"/>
-    </listeners>
-    <!--
-    <php>
-        <server name="KERNEL_DIR" value="/path/to/your/app/" />
-    </php>
-    -->
-
-
     <filter>
         <blacklist>
             <directory>cache</directory>

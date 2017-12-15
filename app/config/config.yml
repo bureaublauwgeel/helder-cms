@@ -5,7 +5,7 @@ framework:
     ide:                "phpstorm://open?file=%%f&line=%%l"
     translator:         { fallback: %locale% }
     session:
-        name:               %session_prefix%
+        name:               '%session_prefix%'
         # set true if no scripting languages need to access the cookie
         cookie_httponly:    false
     assets:
@@ -13,12 +13,13 @@ framework:
 
 twig:
     globals:
-        websitetitle: %websitetitle%
-        defaultlocale: %defaultlocale%
-        requiredlocales: %requiredlocales%
-        gtm_code: %analytics.googletagmanager%
-        titlecolor: "#ffffff"
-        titlebgcolor: "#8e962b"
+        websitetitle: '%websitetitle%'
+        defaultlocale: '%defaultlocale%'
+        requiredlocales: '%requiredlocales%'
+        requiredlocales_array: '%requiredlocales_array%'
+        gtm_code: '%analytics.googletagmanager%'
+        titlecolor: '#ffffff'
+        titlebgcolor: '#8e962b'
 
 assetic:
     debug: "%kernel.debug%"
@@ -68,6 +69,7 @@ doctrine:
 
 parameters:
     assetic.cache.class: Assetic\Cache\ArrayCache
+    requiredlocales_array: ['nl', 'fr', 'de', 'en']
 
 stof_doctrine_extensions:
     default_locale: %defaultlocale%
@@ -103,57 +105,27 @@ liip_imagine:
             filters:
                 strip: ~
 
-        # ImagePagePart srcset JPG filters
-        image_huge_jpg:
-            quality: 95
-            format: jpg
+        # Sane default filrters
+        image_huge:
+            quality: 90
             filters:
                 strip: ~
-                thumbnail: { size: [2400,null], mode: outbound, allow_upscale: false }
-        image_big_jpg:
-            quality: 95
-            format: jpg
+                thumbnail: { size: [2400, null], mode: outbound, allow_upscale: false }
+        image_big:
+            quality: 90
             filters:
                 strip: ~
-                thumbnail: { size: [1200,null], mode: outbound, allow_upscale: false }
-        image_medium_jpg:
-            quality: 95
-            format: jpg
+                thumbnail: { size: [1200, null], mode: outbound, allow_upscale: false }
+        image_medium:
+            quality: 90
             filters:
                 strip: ~
-                thumbnail: { size: [600,null], mode: outbound, allow_upscale: false }
-        image_small_jpg:
-            quality: 95
-            format: jpg
+                thumbnail: { size: [600, null], mode: outbound, allow_upscale: false }
+        image_small:
+            quality: 90
             filters:
                 strip: ~
-                thumbnail: { size: [400,null], mode: outbound, allow_upscale: false }
-
-        # ImagePagePart srcset PNG filters
-        image_huge_png:
-            quality: 95
-            format: png
-            filters:
-                strip: ~
-                thumbnail: { size: [2400,null], mode: outbound, allow_upscale: false }
-        image_big_png:
-            quality: 95
-            format: png
-            filters:
-                strip: ~
-                thumbnail: { size: [1200,null], mode: outbound, allow_upscale: false }
-        image_medium_png:
-            quality: 95
-            format: png
-            filters:
-                strip: ~
-                thumbnail: { size: [600,null], mode: outbound, allow_upscale: false }
-        image_small_png:
-            quality: 95
-            format: png
-            filters:
-                strip: ~
-                thumbnail: { size: [400,null], mode: outbound, allow_upscale: false }
+                thumbnail: { size: [400, null], mode: outbound, allow_upscale: false }
 
 services:
     twig.extension.text:
@@ -186,18 +158,27 @@ services:
         calls:
             - [ setAnnotationReader, [ "@annotation_reader" ] ]
 
+    gedmo.listener.sortable:
+        class: Gedmo\Sortable\SortableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ "@annotation_reader" ] ]
+
     fos_user.doctrine_registry:
         alias: doctrine
 
 white_october_pagerfanta:
-    default_view: twitter_bootstrap
+    default_view: twitter_bootstrap4
 
 kunstmaan_translator:
     enabled: true
-    managed_locales: ['nl', 'en', 'de', 'fr']
+    managed_locales: '%requiredlocales_array%'
+
 kunstmaan_menu:
     menu_adminlist: Kunstmaan\MenuBundle\AdminList\MenuAdminListConfigurator
     menus: [header, footer]
+
 bbg_kunstmaan_admin:
     show_kunstmaan_branding: false
     ckeditor_styles:

@@ -11,6 +11,11 @@ KunstmaanMediaBundle:
     resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
     prefix:   /
 
+# KunstmaanMenuBundle
+KunstmaanMenuBundle:
+    resource: "@KunstmaanMenuBundle/Resources/config/routing.yml"
+    prefix:   /
+
 # KunstmaanAdminBundle
 KunstmaanAdminBundle:
     resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
@@ -24,11 +29,6 @@ KunstmaanNodeBundle:
 # KunstmaanPagePartBundle
 KunstmaanPagePartBundle:
     resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
-    prefix:   /
-
-# KunstmaanFormBundle
-KunstmaanFormBundle:
-    resource: "@KunstmaanFormBundle/Resources/config/routing.yml"
     prefix:   /
 
 # KunstmaanSitemapBundle
@@ -65,3 +65,8 @@ KunstmaanSeoBundle:
 KunstmaanSeoBundle_robots:
     resource: "@KunstmaanSeoBundle/Controller/RobotsController.php"
     type:     annotation
+
+# BbgWebsiteSettingsBundle
+BbgWebsiteSettingsBundle:
+    resource: "@BbgWebsiteSettingsBundle/Resources/config/routing.yml"
+    prefix: /

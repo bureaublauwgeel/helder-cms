@@ -31,6 +31,8 @@ class AppKernel extends Kernel
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+            # Kunstmaan Bundles
             new Kunstmaan\UtilitiesBundle\KunstmaanUtilitiesBundle(),
             new Kunstmaan\NodeBundle\KunstmaanNodeBundle(),
             new Kunstmaan\SeoBundle\KunstmaanSeoBundle(),
@@ -38,10 +40,7 @@ class AppKernel extends Kernel
             new Kunstmaan\AdminBundle\KunstmaanAdminBundle(),
             new Kunstmaan\PagePartBundle\KunstmaanPagePartBundle(),
             new Kunstmaan\MediaPagePartBundle\KunstmaanMediaPagePartBundle(),
-            new Kunstmaan\FormBundle\KunstmaanFormBundle(),
             new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle(),
-            new Kunstmaan\SearchBundle\KunstmaanSearchBundle(),
-            new Kunstmaan\NodeSearchBundle\KunstmaanNodeSearchBundle(),
             new Kunstmaan\SitemapBundle\KunstmaanSitemapBundle(),
             new Kunstmaan\ArticleBundle\KunstmaanArticleBundle(),
             new Kunstmaan\TranslatorBundle\KunstmaanTranslatorBundle(),
@@ -49,11 +48,11 @@ class AppKernel extends Kernel
             new Kunstmaan\UserManagementBundle\KunstmaanUserManagementBundle(),
             new Kunstmaan\DashboardBundle\KunstmaanDashboardBundle(),
             new Kunstmaan\MenuBundle\KunstmaanMenuBundle(),
-            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             # BBG Bundles
             new Bbg\KunstmaanAdminBundle\BbgKunstmaanAdminBundle(),
-            //new Kunstmaan\LeadGenerationBundle\KunstmaanLeadGenerationBundle(),
             new Bbg\WebsiteSettingsBundle\BbgWebsiteSettingsBundle(),
+            new Bbg\BaseBundle\BbgBaseBundle(),
+            new Bbg\PagePartBundle\BbgPagePartBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev'], true)) {

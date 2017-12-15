@@ -7,10 +7,7 @@ php app/console doctrine:migrations:migrate --no-interaction
 php app/console doctrine:fixtures:load --no-interaction
 
 bundle install
-npm install --save bower gulp uglify-js uglifycss
-npm install
-npm shrinkwrap
-node_modules/.bin/bower install --config.interactive=false
+yarn install
 node_modules/.bin/gulp build
 
 php app/console assets:install --symlink

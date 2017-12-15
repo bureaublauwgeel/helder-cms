@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "uglify-js": "^3.1.10",
+    "uglifycss": "^0.0.27"
+  }
+}
