@@ -89,10 +89,3 @@ KunstmaanSeoBundle:
 KunstmaanSeoBundle_robots:
     resource: "@KunstmaanSeoBundle/Controller/RobotsController.php"
     type:     annotation
-
-# BbgWebsiteSettingsBundle
-BbgWebsiteSettingsBundle:
-    resource: "@BbgWebsiteSettingsBundle/Resources/config/routing.yml"
-    prefix: /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
