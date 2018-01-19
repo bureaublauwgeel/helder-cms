@@ -10,6 +10,7 @@
 composer.phar
 
 /app/bootstrap.php.cache
+/app/phpunit.xml
 /app/config/parameters.yml
 /app/cache/*
 /app/logs/*
@@ -34,10 +35,7 @@ composer.phar
 
 node_modules
 
-docker/logs
-.ssh/known_hosts
 .composer
-.bash_history
 .npm
 .bundle/cache
 .cache

@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\Kernel;
 class AppKernel extends Kernel
 {
     /**
-     * @return array
+     * {@inheritdoc}
      */
     public function registerBundles()
     {
@@ -49,9 +49,8 @@ class AppKernel extends Kernel
             new Kunstmaan\DashboardBundle\KunstmaanDashboardBundle(),
             new Kunstmaan\MenuBundle\KunstmaanMenuBundle(),
             # BBG Bundles
-            new Bbg\KunstmaanAdminBundle\BbgKunstmaanAdminBundle(),
-            new Bbg\WebsiteSettingsBundle\BbgWebsiteSettingsBundle(),
             new Bbg\BaseBundle\BbgBaseBundle(),
+            new Bbg\KunstmaanAdminBundle\BbgKunstmaanAdminBundle(),
             new Bbg\PagePartBundle\BbgPagePartBundle()
         ];
 
@@ -73,7 +72,7 @@ class AppKernel extends Kernel
     }
 
     /**
-     * @param LoaderInterface $loader
+     * {@inheritdoc}
      */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {

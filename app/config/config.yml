@@ -2,14 +2,14 @@ imports:
     - { resource: config_base.yml }
 
 framework:
-    ide:                "phpstorm://open?file=%%f&line=%%l"
-    translator:         { fallback: %locale% }
+    ide: 'phpstorm://open?file=%%f&line=%%l'
+    translator: { fallback: '%locale%' }
     session:
-        name:               '%session_prefix%'
+        name: '%session_prefix%'
         # set true if no scripting languages need to access the cookie
-        cookie_httponly:    false
+        cookie_httponly: false
     assets:
-        version:     ~
+        version: ~
 
 twig:
     globals:
@@ -22,7 +22,7 @@ twig:
         titlebgcolor: '#8e962b'
 
 assetic:
-    debug: "%kernel.debug%"
+    debug: '%kernel.debug%'
     use_controller: false
     node: '%nodejs_path%'
     ruby: bundle exec
@@ -45,34 +45,35 @@ doctrine:
                     gedmo_translatable:
                         type: annotation
                         prefix: Gedmo\Translatable\Entity
-                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+                        dir: '%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity'
                         alias: GedmoTranslatable # this one is optional and will default to the name set for the mapping
                         is_bundle: false
                     gedmo_translator:
                         type: annotation
                         prefix: Gedmo\Translator\Entity
-                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translator/Entity"
+                        dir: '%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translator/Entity'
                         alias: GedmoTranslator # this one is optional and will default to the name set for the mapping
                         is_bundle: false
                     gedmo_loggable:
                         type: annotation
                         prefix: Gedmo\Loggable\Entity
-                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                        dir: '%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity'
                         alias: GedmoLoggable # this one is optional and will default to the name set for the mapping
                         is_bundle: false
                     gedmo_tree:
                         type: annotation
                         prefix: Gedmo\Tree\Entity
-                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
+                        dir: '%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity'
                         alias: GedmoTree # this one is optional and will default to the name set for the mapping
                         is_bundle: false
 
 parameters:
     assetic.cache.class: Assetic\Cache\ArrayCache
+    version_checker.enabled: false
     requiredlocales_array: ['nl', 'fr', 'de', 'en']
 
 stof_doctrine_extensions:
-    default_locale: %defaultlocale%
+    default_locale: '%defaultlocale%'
     translation_fallback: true
     orm:
         default:
@@ -156,14 +157,14 @@ services:
         tags:
             - { name: doctrine.event_subscriber, connection: default }
         calls:
-            - [ setAnnotationReader, [ "@annotation_reader" ] ]
+            - [ setAnnotationReader, [ '@annotation_reader' ] ]
 
     gedmo.listener.sortable:
         class: Gedmo\Sortable\SortableListener
         tags:
             - { name: doctrine.event_subscriber, connection: default }
         calls:
-            - [ setAnnotationReader, [ "@annotation_reader" ] ]
+            - [ setAnnotationReader, [ '@annotation_reader' ] ]
 
     fos_user.doctrine_registry:
         alias: doctrine
@@ -186,4 +187,4 @@ bbg_kunstmaan_admin:
             name: Lead text
             element: div
             class: lead
-            css: "font-size:16px; font-weight:bold;"
+            css: 'font-size:16px; font-weight:bold;'

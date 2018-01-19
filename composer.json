@@ -2,7 +2,7 @@
     "name": "bureaublauwgeel/helder-cms",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Helder Cms\" from Bureaublauwgeel",
+    "description": "The \"Helder CMS\" from Bureaublauwgeel",
     "autoload": {
         "psr-4": {
             "": "src/"
