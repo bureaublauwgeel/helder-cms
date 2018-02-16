@@ -5,13 +5,17 @@
 .buildpath
 .project
 .settings
+.v8flags.*
 *.sublime-project
 composer.phar
 
 /app/bootstrap.php.cache
+/app/phpunit.xml
 /app/config/parameters.yml
 /app/cache/*
 /app/logs/*
+
+/build/
 
 !/app/cache/.gitkeep
 !/app/logs/.gitkeep
@@ -24,14 +28,14 @@ composer.phar
 /web/css/
 /web/bundles/
 /web/Kunstmaan*BundleAssets/
+/web/generated-js/
 /web/uploads
+
+/app/Resources/*WebsiteBundle/views/Layout/_js_footer.html.twig
 
 node_modules
 
-docker/logs
-.ssh/known_hosts
 .composer
-.bash_history
 .npm
 .bundle/cache
 .cache
