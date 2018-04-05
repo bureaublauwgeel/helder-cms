@@ -46,6 +46,11 @@ KunstmaanDashboardBundle:
     resource: '@KunstmaanDashboardBundle/Resources/config/routing.yml'
     prefix: /
 
+# KunstmaanMenuBundle
+KunstmaanMenuBundle:
+    resource: '@KunstmaanMenuBundle/Resources/config/routing.yml'
+    prefix: /
+
 # KunstmaanSeoBundle
 KunstmaanSeoBundle:
     resource: '@KunstmaanSeoBundle/Resources/config/routing.yml'

@@ -69,6 +69,13 @@ KunstmaanDashboardBundle:
     requirements:
         _locale: '%requiredlocales%'
 
+# KunstmaanMenuBundle
+KunstmaanMenuBundle:
+    resource: '@KunstmaanMenuBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
+    requirements:
+        _locale: '%requiredlocales%'
+
 # KunstmaanSeoBundle
 KunstmaanSeoBundle:
     resource: '@KunstmaanSeoBundle/Resources/config/routing.yml'
