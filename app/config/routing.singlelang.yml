@@ -1,67 +1,57 @@
-# BbgKunstmaanAdminBundle
-BbgKunstmaanAdminBundle:
-    resource: '@BbgKunstmaanAdminBundle/Resources/config/routing_bbg.yml'
+website:
+    resource: '@WebsiteBundle/Controller/'
+    type: annotation
     prefix: /
 
 # KunstmaanMediaBundle
 _liip_imagine:
-    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+    resource: '@LiipImagineBundle/Resources/config/routing.xml'
 
 KunstmaanMediaBundle:
-    resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
-    prefix:   /
-
-# KunstmaanMenuBundle
-KunstmaanMenuBundle:
-    resource: "@KunstmaanMenuBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: '@KunstmaanMediaBundle/Resources/config/routing.yml'
+    prefix: /
 
 # KunstmaanAdminBundle
 KunstmaanAdminBundle:
-    resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: '@KunstmaanAdminBundle/Resources/config/routing.yml'
+    prefix: /
 
 # KunstmaanNodeBundle
 KunstmaanNodeBundle:
-    resource: "@KunstmaanNodeBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: '@KunstmaanNodeBundle/Resources/config/routing.yml'
+    prefix: /
 
 # KunstmaanPagePartBundle
 KunstmaanPagePartBundle:
-    resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
-    prefix:   /
-
-# KunstmaanSitemapBundle
-KunstmaanSitemapBundle:
-    resource: "@KunstmaanSitemapBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: '@KunstmaanPagePartBundle/Resources/config/routing.yml'
+    prefix: /
 
 # KunstmaanTranslatorBundle
 KunstmaanTranslatorBundle:
-    resource: "@KunstmaanTranslatorBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: '@KunstmaanTranslatorBundle/Resources/config/routing.yml'
+    prefix: /
 
 # KunstmaanRedirectBundle
 KunstmaanRedirectBundle:
-    resource: "@KunstmaanRedirectBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: '@KunstmaanRedirectBundle/Resources/config/routing.yml'
+    prefix: /
 
 # KunstmaanUserManagementBundle
 KunstmaanUserManagementBundle:
-    resource: "@KunstmaanUserManagementBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: '@KunstmaanUserManagementBundle/Resources/config/routing.yml'
+    prefix: /
 
 # KunstmaanDashboardBundle
 KunstmaanDashboardBundle:
-    resource: "@KunstmaanDashboardBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: '@KunstmaanDashboardBundle/Resources/config/routing.yml'
+    prefix: /
 
 # KunstmaanSeoBundle
 KunstmaanSeoBundle:
-    resource: "@KunstmaanSeoBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: '@KunstmaanSeoBundle/Resources/config/routing.yml'
+    prefix: /
 
 # Robots.txt
 KunstmaanSeoBundle_robots:
-    resource: "@KunstmaanSeoBundle/Controller/RobotsController.php"
-    type:     annotation
+    resource: '@KunstmaanSeoBundle/Controller/RobotsController.php'
+    type: annotation

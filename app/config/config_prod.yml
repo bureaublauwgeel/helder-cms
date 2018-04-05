@@ -17,9 +17,19 @@ monolog:
             type: fingers_crossed
             action_level: error
             handler: nested
+            channels: ['!event']
+            excluded_404s: ['^/']
         nested:
             type: stream
             path: '%kernel.logs_dir%/%kernel.environment%.log'
             level: debug
+            formatter: kunstmaan_logging_formatter
         console:
             type: console
+            process_psr_3_messages: false
+
+liip_imagine:
+    loaders:
+        default:
+            filesystem:
+                data_root: '%liip_imagine_filesystem_data_root%'

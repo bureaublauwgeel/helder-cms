@@ -1,91 +1,82 @@
-# BbgKunstmaanAdminBundle
-BbgKunstmaanAdminBundle:
-    resource: '@BbgKunstmaanAdminBundle/Resources/config/routing_bbg.yml'
+website:
+    resource: '@WebsiteBundle/Controller/'
+    type: annotation
     prefix: /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
 
 # KunstmaanMediaBundle
 _liip_imagine:
-    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+    resource: '@LiipImagineBundle/Resources/config/routing.xml'
 
 KunstmaanMediaBundle:
-    resource: "@KunstmaanMediaBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    resource: '@KunstmaanMediaBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
     requirements:
-        _locale: %requiredlocales%
-
-# KunstmaanMenuBundle
-KunstmaanMenuBundle:
-    resource: "@KunstmaanMenuBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
+        _locale: '%requiredlocales%'
 
 # KunstmaanAdminBundle
 KunstmaanAdminBundle:
-    resource: "@KunstmaanAdminBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    resource: '@KunstmaanAdminBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
     requirements:
-        _locale: %requiredlocales%
+        _locale: '%requiredlocales%'
+
+# KunstmaanAdminListBundle
+KunstmaanAdminListBundle:
+    resource: '@KunstmaanAdminListBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
+    requirements:
+        _locale: '%requiredlocales%'
 
 # KunstmaanNodeBundle
 KunstmaanNodeBundle:
-    resource: "@KunstmaanNodeBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    resource: '@KunstmaanNodeBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
     requirements:
-        _locale: %requiredlocales%
+        _locale: '%requiredlocales%'
 
 # KunstmaanPagePartBundle
 KunstmaanPagePartBundle:
-    resource: "@KunstmaanPagePartBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    resource: '@KunstmaanPagePartBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
     requirements:
-        _locale: %requiredlocales%
-
-# KunstmaanSitemapBundle
-KunstmaanSitemapBundle:
-    resource: "@KunstmaanSitemapBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
-    requirements:
-        _locale: %requiredlocales%
+        _locale: '%requiredlocales%'
 
 # KunstmaanTranslatorBundle
 KunstmaanTranslatorBundle:
-    resource: "@KunstmaanTranslatorBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    resource: '@KunstmaanTranslatorBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
     requirements:
-        _locale: %requiredlocales%
+        _locale: '%requiredlocales%'
 
 # KunstmaanRedirectBundle
 KunstmaanRedirectBundle:
-    resource: "@KunstmaanRedirectBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    resource: '@KunstmaanRedirectBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
     requirements:
-        _locale: %requiredlocales%
+        _locale: '%requiredlocales%'
 
 # KunstmaanUserManagementBundle
 KunstmaanUserManagementBundle:
-    resource: "@KunstmaanUserManagementBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    resource: '@KunstmaanUserManagementBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
     requirements:
-        _locale: %requiredlocales%
+        _locale: '%requiredlocales%'
 
 # KunstmaanDashboardBundle
 KunstmaanDashboardBundle:
-    resource: "@KunstmaanDashboardBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    resource: '@KunstmaanDashboardBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
     requirements:
-        _locale: %requiredlocales%
+        _locale: '%requiredlocales%'
 
 # KunstmaanSeoBundle
 KunstmaanSeoBundle:
-    resource: "@KunstmaanSeoBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/
+    resource: '@KunstmaanSeoBundle/Resources/config/routing.yml'
+    prefix: /{_locale}/
     requirements:
-        _locale: %requiredlocales%
+        _locale: '%requiredlocales%'
 
 # Robots.txt
 KunstmaanSeoBundle_robots:
-    resource: "@KunstmaanSeoBundle/Controller/RobotsController.php"
-    type:     annotation
+    resource: '@KunstmaanSeoBundle/Controller/RobotsController.php'
+    type: annotation

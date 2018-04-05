@@ -13,40 +13,26 @@
         ]
     },
     "autoload-dev": {
-        "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
+        "psr-4": {
+            "Tests\\": "tests/"
+        },
+        "files": [
+            "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
+        ]
     },
     "require": {
-        "php": ">=7.0.22",
-        "kunstmaan/bundles-cms": "~3.6.0",
-        "friendsofsymfony/http-cache-bundle": "~1.3",
-        "doctrine/doctrine-migrations-bundle": "~1.3",
+        "php": ">=7.2.3",
+        "doctrine/doctrine-migrations-bundle": "^1.3",
         "friendsofsymfony/user-bundle": "2.0.0-beta1",
-        "twig/twig": "~1.35",
-        "bureaublauwgeel/kunstmaanadminbundle": "3.6.0.*",
-        "bureaublauwgeel/generatorbundle": "~1.0",
-        "bureaublauwgeel/base-bundle": "~1.0",
-        "bureaublauwgeel/PagePartBundle": "~1.0"
+        "kunstmaan/bundles-cms": "~5.0.5",
+        "symfony/polyfill-apcu": "^1.0",
+        "twig/twig": "^1.0||^2.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@git.bbgtest.nl:bureaublauwgeel/bbg-kunstmaan-admin-bundle.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@git.bbgtest.nl:bureaublauwgeel/bbg-generator-bundle.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@git.bbgtest.nl:bureaublauwgeel/bbg-base-bundle.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@git.bbgtest.nl:bureaublauwgeel/bbg-page-part-bundle.git"
-        }
-    ],
     "require-dev": {
-        "phpunit/phpunit": "~4.8"
+        "phpunit/phpunit": "^7.0"
+    },
+    "conflict": {
+        "symfony/web-profiler-bundle": "3.4.7"
     },
     "scripts": {
         "symfony-scripts": [
@@ -65,21 +51,23 @@
         ]
     },
     "config": {
-        "bin-dir": "bin",
         "platform": {
-            "php": "7.0.22"
+            "php": "7.2.3"
         },
         "sort-packages": true
     },
     "extra": {
         "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
         "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.8-dev"
+            "dev-master": "3.4-dev"
         }
     }
 }
