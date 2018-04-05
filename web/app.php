@@ -13,8 +13,6 @@ if (getenv('APP_ENV') !== 'dev') {
     }
 }
 
-$kernel = new AppCache($kernel);
-
 Request::enableHttpMethodParameterOverride();
 $request = Request::createFromGlobals();
 /** @noinspection PhpUnhandledExceptionInspection */
