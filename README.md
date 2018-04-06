@@ -1,5 +1,5 @@
 # Helder CMS by Bureau BlauwGeel
-==================================
+================================
 
 Welcome to the Helder CMS - 
 a fully-functional CMS (content management system) based on Symfony2 that you can use as the skeleton for your websites.
@@ -35,7 +35,7 @@ With phpStorm PHPUnit is loaded with autoload.php from the Composer dependency m
 ```
     "require-dev": {
         ...
-        "phpunit/phpunit": "~4.8"
+        "phpunit/phpunit": "^7.0"
     },
 ```
 
