@@ -50,6 +50,8 @@ class AppKernel extends Kernel
             new Kunstmaan\UserManagementBundle\KunstmaanUserManagementBundle(),
             new Kunstmaan\DashboardBundle\KunstmaanDashboardBundle(),
             new Kunstmaan\MenuBundle\KunstmaanMenuBundle(),
+            # BBG bundles
+            new Bbg\UtilitiesBundle\BbgUtilitiesBundle(),
             # Application bundles
             new WebsiteBundle\WebsiteBundle()
         ];
