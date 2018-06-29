@@ -24,6 +24,7 @@
         "php": ">=7.2.0",
         "bureaublauwgeel/utilities-bundle": "dev-develop",
         "doctrine/doctrine-migrations-bundle": "~1.3",
+        "helder/utilities-bundle": "dev-develop",
         "kunstmaan/bundles-cms": "5.0.7",
         "symfony/polyfill-apcu": "~1.0",
         "twig/twig": "~2.0"
@@ -35,6 +36,10 @@
         {
             "type": "vcs",
             "url": "git@git.bbgtest.nl:helder/bbg-utilities-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@git.bbgtest.nl:helder/helder-utilities-bundle.git"
         }
     ],
     "scripts": {

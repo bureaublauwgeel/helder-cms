@@ -52,6 +52,8 @@ class AppKernel extends Kernel
             new Kunstmaan\MenuBundle\KunstmaanMenuBundle(),
             # BBG bundles
             new Bbg\UtilitiesBundle\BbgUtilitiesBundle(),
+            # Helder bundles
+            new Helder\UtilitiesBundle\HelderUtilitiesBundle(),
             # Application bundles
             new WebsiteBundle\WebsiteBundle()
         ];
