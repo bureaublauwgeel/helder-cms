@@ -21,15 +21,14 @@
         ]
     },
     "require": {
-        "php": ">=7.2.3",
+        "php": ">=7.2.0",
         "doctrine/doctrine-migrations-bundle": "~1.3",
-        "friendsofsymfony/user-bundle": "2.0.0-beta1",
-        "kunstmaan/bundles-cms": "~5.0.5",
+        "kunstmaan/bundles-cms": "5.0.7",
         "symfony/polyfill-apcu": "~1.0",
         "twig/twig": "~2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "~7.0"
     },
     "conflict": {
         "symfony/web-profiler-bundle": "3.4.7"

@@ -162,3 +162,8 @@ kunstmaan_page_part:
 
 kunstmaan_menu:
     menus: [header, footer]
+
+fos_user:
+    from_email:
+        address: '%mailer_from_address%'
+        sender_name: '%mailer_from_name%'
