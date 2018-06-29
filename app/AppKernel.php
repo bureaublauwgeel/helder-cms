@@ -54,6 +54,7 @@ class AppKernel extends Kernel
             new Bbg\UtilitiesBundle\BbgUtilitiesBundle(),
             # Helder bundles
             new Helder\UtilitiesBundle\HelderUtilitiesBundle(),
+            new Helder\GeneratorBundle\HelderGeneratorBundle(),
             # Application bundles
             new WebsiteBundle\WebsiteBundle()
         ];
