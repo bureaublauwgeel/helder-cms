@@ -31,9 +31,6 @@
     "require-dev": {
         "phpunit/phpunit": "~7.0"
     },
-    "conflict": {
-        "symfony/web-profiler-bundle": "3.4.7"
-    },
     "repositories": [
         {
             "type": "vcs",
