@@ -36,3 +36,4 @@ parameters:
     doctrine.server_version: 5.6
     validation_cache: ~
     doctrine_cache: array
+    liip_imagine_filesystem_data_root: '%kernel.root_dir%/../web'
