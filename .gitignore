@@ -31,5 +31,6 @@
 /vendor/
 /web/bundles/
 /web/frontend/
+/web/uploads/
 
 node_modules/
